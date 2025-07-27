@@ -1,0 +1,45 @@
+{
+  "name": "@amorphie/schema-definitions",
+  "version": "1.0.0",
+  "description": "JSON Schema definitions for Amorphie vNext Workflow components validation",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "schemas/",
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "prepublishOnly": "echo 'Preparing for publish...'"
+  },
+  "keywords": [
+    "amorphie",
+    "schema",
+    "validation",
+    "json-schema",
+    "workflow",
+    "vnext",
+    "cli"
+  ],
+  "author": "Amorphie Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burganbank/Amorhie.Schemas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/burganbank/Amorhie.Schemas/issues"
+  },
+  "homepage": "https://github.com/burganbank/Amorhie.Schemas#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+} 
