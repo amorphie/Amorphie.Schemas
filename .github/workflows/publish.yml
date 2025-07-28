@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     
     steps:
@@ -37,15 +37,20 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref_name }}
-          release_name: Release ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
           body: |
-            Automated release for version ${{ github.ref_name }}
+            🚀 Automated release for version **${{ github.ref_name }}**
             
-            Package published to npm: https://www.npmjs.com/package/@amorphie/schema-definitions
+            📦 Package published to GitHub Packages: `@amorphie/schema-definitions`
+            
+            ## Installation
+            ```bash
+            npm install @amorphie/schema-definitions
+            ```
           draft: false
-          prerelease: false 
+          prerelease: ${{ contains(github.ref_name, '-rc') || contains(github.ref_name, '-beta') || contains(github.ref_name, '-alpha') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
