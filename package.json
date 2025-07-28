@@ -1,6 +1,6 @@
 {
   "name": "@amorphie/schema-definitions",
-  "version": "0.0.1-rc.1",
+  "version": "0.0.1-rc.2",
   "description": "JSON Schema definitions for Amorphie vNext Workflow components validation",
   "main": "index.js",
   "types": "index.d.ts",
