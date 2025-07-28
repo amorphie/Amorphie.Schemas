@@ -1,0 +1,51 @@
+name: Publish Amorphie Schema Package
+
+on:
+  push:
+    tags:
+      - 'v*'  # v ile başlayan taglar (örn: v1.0.0, v1.2.3)
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          registry-url: 'https://npm.pkg.github.com'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Verify package
+        run: |
+          echo "Package name: $(npm pkg get name)"
+          echo "Package version: $(npm pkg get version)"
+          echo "Publishing to GitHub Packages"
+          
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          body: |
+            Automated release for version ${{ github.ref_name }}
+            
+            Package published to npm: https://www.npmjs.com/package/@amorphie/schema-definitions
+          draft: false
+          prerelease: false 

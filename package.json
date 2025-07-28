@@ -1,6 +1,6 @@
 {
   "name": "@amorphie/schema-definitions",
-  "version": "1.0.0",
+  "version": "0.0.1-rc.1",
   "description": "JSON Schema definitions for Amorphie vNext Workflow components validation",
   "main": "index.js",
   "types": "index.d.ts",
@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/burganbank/Amorhie.Schemas#readme",
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "engines": {
