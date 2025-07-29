@@ -24,7 +24,7 @@ npm install @amorphie/schema-definitions
 
 ## Usage
 
-This package is primarily designed to be used with the [@amorphie/cli](https://www.npmjs.com/package/@amorphie/cli) tool for workflow development and validation.
+This package is primarily designed to be used with the [@amorphie/cli](https://github.com/amorphie/Amorphie.Cli/pkgs/npm/cli) tool for workflow development and validation.
 
 ### Using with @amorphie/cli
 
@@ -40,7 +40,7 @@ The CLI automatically uses these schema definitions for:
 - Ensuring compliance with Amorphie standards
 - Development-time validation
 
-For detailed CLI usage and workflow development guide, please refer to the [@amorphie/cli documentation](https://www.npmjs.com/package/@amorphie/cli).
+For detailed CLI usage and workflow development guide, please refer to the [@amorphie/cli documentation](https://github.com/amorphie/Amorphie.Cli/pkgs/npm/cli).
 
 ### Programmatic Usage
 
@@ -73,7 +73,7 @@ All schemas follow the Amorphie component structure with required fields:
 
 ## Contributing
 
-This package is maintained by the Amorphie Team. For issues, feature requests, or contributions, please visit the [GitHub repository](https://github.com/burganbank/Amorhie.Schemas).
+This package is maintained by the Amorphie Team. For issues, feature requests, or contributions, please visit the [GitHub repository](https://github.com/amorphie/Amorphie.Schemas).
 
 ## License
 
@@ -82,8 +82,8 @@ MIT
 ## Support
 
 For support and questions:
-- GitHub Issues: [https://github.com/burganbank/Amorhie.Schemas/issues](https://github.com/burganbank/Amorhie.Schemas/issues)
-- Documentation: Available through [@amorphie/cli](https://www.npmjs.com/package/@amorphie/cli)
+- GitHub Issues: [https://github.com/amorphie/Amorphie.Schemas/issues](https://github.com/burganbank/Amorhie.Schemas/issues)
+- Documentation: Available through [@amorphie/cli](https://github.com/amorphie/Amorphie.Cli/pkgs/npm/cli)
 
 ---
 
