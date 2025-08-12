@@ -1,7 +1,7 @@
 {
-  "name": "@amorphie/schema-definitions",
-  "version": "0.0.1-rc.2",
-  "description": "JSON Schema definitions for Amorphie vNext Workflow components validation",
+  "name": "@vnext/schema",
+  "version": "1.0.0",
+  "description": "JSON Schema definitions for vNext vNext Workflow components validation",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
@@ -14,7 +14,7 @@
     "prepublishOnly": "echo 'Preparing for publish...'"
   },
   "keywords": [
-    "amorphie",
+    "vnext",
     "schema",
     "validation",
     "json-schema",
@@ -22,16 +22,16 @@
     "vnext",
     "cli"
   ],
-  "author": "Amorphie Team",
+  "author": "Burgan Tech",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/burganbank/Amorhie.Schemas.git"
+    "url": "git+https://github.com/burgan-tech/vnext-schema.git"
   },
   "bugs": {
-    "url": "https://github.com/burganbank/Amorhie.Schemas/issues"
+    "url": "https://github.com/burgan-tech/vnext-schema/issues"
   },
-  "homepage": "https://github.com/burganbank/Amorhie.Schemas#readme",
+  "homepage": "https://github.com/burgan-tech/vnext-schema#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"

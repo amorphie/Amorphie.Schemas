@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://amorphie.com/schemas/core-schema.schema.json",
-    "title": "Amorphie Core Schema Definition",
-    "description": "Schema for Amorphie Core Schema Definition JSON files",
+    "$id": "https://vnext.com/schemas/core-schema.schema.json",
+    "title": "vNext Core Schema Definition",
+    "description": "Schema for vNext Core Schema Definition JSON files",
     "type": "object",
     "required": [
         "key",
