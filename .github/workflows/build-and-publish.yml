@@ -294,9 +294,23 @@ jobs:
             return 1
           fi
           
-          # Configure npm registry
+          # Clear any existing registry configuration
+          npm config delete registry || true
+          npm config delete //npm.pkg.github.com/:_authToken || true
+          
+          # Configure npm registry for NPM.js
           npm config set registry https://registry.npmjs.org/
           npm config set //registry.npmjs.org/:_authToken $NODE_AUTH_TOKEN
+          
+          # Remove publishConfig from package.json temporarily for NPM.js
+          if [ -f package.json.backup ]; then
+            cp package.json.backup package.json
+          else
+            cp package.json package.json.backup
+          fi
+          
+          # Remove the publishConfig section that points to GitHub
+          jq 'del(.publishConfig)' package.json > package.json.tmp && mv package.json.tmp package.json
           
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_publish }}" == "true" ]; then
@@ -306,7 +320,7 @@ jobs:
           fi
           
           # Attempt to publish
-          if npm publish $FORCE_FLAG --access public; then
+          if npm publish $FORCE_FLAG --access public --registry https://registry.npmjs.org/; then
             echo "✅ Successfully published to NPM.js"
             return 0
           else
@@ -325,6 +339,15 @@ jobs:
             return 1
           fi
           
+          # Restore original package.json if it was backed up
+          if [ -f package.json.backup ]; then
+            cp package.json.backup package.json
+          fi
+          
+          # Clear any existing registry configuration
+          npm config delete registry || true
+          npm config delete //registry.npmjs.org/:_authToken || true
+          
           # Configure npm for GitHub Packages
           npm config set registry https://npm.pkg.github.com
           npm config set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
@@ -338,8 +361,11 @@ jobs:
             mv package.json.tmp package.json
           fi
           
+          # Ensure publishConfig is set for GitHub Packages
+          jq '.publishConfig = {"registry": "https://npm.pkg.github.com", "access": "public"}' package.json > package.json.tmp && mv package.json.tmp package.json
+          
           # Attempt to publish
-          if npm publish; then
+          if npm publish --registry https://npm.pkg.github.com; then
             echo "✅ Successfully published to GitHub Packages"
             return 0
           else
@@ -374,7 +400,7 @@ jobs:
               PUBLISHED="true"
             fi
             
-            # Reset npm config and publish to GitHub
+            # Publish to GitHub (this will restore package.json and reconfigure)
             if publish_to_github; then
               SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
               PUBLISHED="true"

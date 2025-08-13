@@ -32,10 +32,6 @@
     "url": "https://github.com/burgan-tech/vnext-schema/issues"
   },
   "homepage": "https://github.com/burgan-tech/vnext-schema#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "public"
-  },
   "engines": {
     "node": ">=14.0.0"
   },
