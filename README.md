@@ -24,14 +24,14 @@ npm install @vnext/schema
 
 ## Usage
 
-This package is primarily designed to be used with the [@vnext/cli](https://github.com/vnext/vNext.Cli/pkgs/npm/cli) tool for workflow development and validation.
+This package is primarily designed to be used with the [@vnext/cli](https://www.npmjs.com/package/@burgan-tech/vnext-cli) tool for workflow development and validation.
 
-### Using with @vnext/cli
+### Using with @burgan-tech/vnext-cli
 
 The recommended way to use these schemas is through the official vNext CLI:
 
 ```bash
-npm install -g @vnext/cli
+npm install -g @burgan-tech/vnext-cli
 ```
 
 The CLI automatically uses these schema definitions for:
@@ -40,7 +40,7 @@ The CLI automatically uses these schema definitions for:
 - Ensuring compliance with vNext standards
 - Development-time validation
 
-For detailed CLI usage and workflow development guide, please refer to the [@vnext/cli documentation](https://github.com/vnext/vNext.Cli/pkgs/npm/cli).
+For detailed CLI usage and workflow development guide, please refer to the [@vnext/cli documentation](https://github.com/burgan-tech/vnext-cli).
 
 ### Programmatic Usage
 
