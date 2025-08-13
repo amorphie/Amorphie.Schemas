@@ -1,5 +1,5 @@
 {
-  "name": "@vnext/schema",
+  "name": "@burgan-tech/vnext-schema",
   "version": "1.0.0",
   "description": "JSON Schema definitions for vNext vNext Workflow components validation",
   "main": "index.js",

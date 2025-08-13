@@ -456,11 +456,11 @@ jobs:
           
           ### 📦 Installation
           ```bash
-          npm install @vnext/schema@${{ steps.version.outputs.version }}
+          npm install @burgan-tech/vnext-schema@${{ steps.version.outputs.version }}
           ```
           
           ### 🔗 Package Links
-          - [NPM Package](https://www.npmjs.com/package/@vnext/schema)
+          - [NPM Package](https://www.npmjs.com/package/@burgan-tech/vnext-schema)
           - [GitHub Packages](https://github.com/${{ github.repository }}/packages)
           
           ### 📋 Schema Definitions
@@ -475,7 +475,7 @@ jobs:
           
           ### 📚 Usage
           ```javascript
-          const schemas = require('@vnext/schema');
+          const schemas = require('@burgan-tech/vnext-schema');
           
           // Get a specific schema
           const workflowSchema = schemas.getSchema('workflow');
@@ -498,7 +498,7 @@ jobs:
         echo "## 📦 NPM Package Publishing Summary" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Version Information" >> $GITHUB_STEP_SUMMARY
-        echo "- **Package**: \`@vnext/schema\`" >> $GITHUB_STEP_SUMMARY
+        echo "- **Package**: \`@burgan-tech/vnext-schema\`" >> $GITHUB_STEP_SUMMARY
         echo "- **Version**: ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
         echo "- **Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
         echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
@@ -537,17 +537,17 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "#### Install as dependency" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "npm install @vnext/schema@${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "npm install @burgan-tech/vnext-schema@${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "#### Install as dev dependency" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "npm install --save-dev @vnext/schema@${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "npm install --save-dev @burgan-tech/vnext-schema@${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "#### Basic Usage" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`javascript" >> $GITHUB_STEP_SUMMARY
-          echo "const schemas = require('@vnext/schema');" >> $GITHUB_STEP_SUMMARY
+          echo "const schemas = require('@burgan-tech/vnext-schema');" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "// Get a specific schema" >> $GITHUB_STEP_SUMMARY
           echo "const workflowSchema = schemas.getSchema('workflow');" >> $GITHUB_STEP_SUMMARY
@@ -564,14 +564,14 @@ jobs:
         fi
         
         echo "### 🔗 Quick Links" >> $GITHUB_STEP_SUMMARY
-        echo "- [NPM Package](https://www.npmjs.com/package/@vnext/schema)" >> $GITHUB_STEP_SUMMARY
+        echo "- [NPM Package](https://www.npmjs.com/package/@burgan-tech/vnext-schema)" >> $GITHUB_STEP_SUMMARY
         echo "- [GitHub Repository](https://github.com/${{ github.repository }})" >> $GITHUB_STEP_SUMMARY
         echo "- [Workflow Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
         echo "- [Package Documentation](https://github.com/${{ github.repository }}#readme)" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
         echo "1. Package will be available on NPM (may take a few minutes to appear in search)" >> $GITHUB_STEP_SUMMARY
-        echo "2. Install and use the schemas: \`npm install @vnext/schema\`" >> $GITHUB_STEP_SUMMARY
+        echo "2. Install and use the schemas: \`npm install @burgan-tech/vnext-schema\`" >> $GITHUB_STEP_SUMMARY
         echo "3. View package details and download statistics on NPM" >> $GITHUB_STEP_SUMMARY
         echo "4. Update documentation if needed" >> $GITHUB_STEP_SUMMARY
         echo "5. Integrate schema validation into your vNext workflow components" >> $GITHUB_STEP_SUMMARY
