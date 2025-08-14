@@ -238,35 +238,64 @@
       }
     },
     "reference": {
-      "type": "object",
-      "required": [
-        "key",
-        "domain",
-        "flow",
-        "version"
-      ],
-      "properties": {
-        "key": {
-          "type": "string",
-          "description": "Reference key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+      "description": "Generic reference - can be either explicit reference or ref",
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Explicit reference",
+          "required": [
+            "key",
+            "domain",
+            "flow",
+            "version"
+          ],
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "domain": {
+              "type": "string"
+            },
+            "flow": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+$"
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "key"
+              ]
+            },
+            {
+              "required": [
+                "id"
+              ]
+            }
+          ]
         },
-        "domain": {
-          "type": "string",
-          "description": "Domain name",
-          "pattern": "^[a-zA-Z\\-]+$"
-        },
-        "flow": {
-          "type": "string",
-          "description": "Flow name",
-          "pattern": "^[a-z\\-]+$"
-        },
-        "version": {
-          "type": "string",
-          "description": "Version in Major.Minor.Patch format",
-          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        {
+          "type": "object",
+          "description": "Reference using ref",
+          "required": [
+            "ref"
+          ],
+          "properties": {
+            "ref": {
+              "type": "string",
+              "description": "Reference to component file"
+            }
+          },
+          "additionalProperties": false
         }
-      }
+      ]
     },
     "scriptCode": {
       "type": "object",
