@@ -20,12 +20,12 @@
     "key": {
       "type": "string",
       "description": "Workflow key identifier",
-      "pattern": "^[a-zA-Z0-9\\-]+$"
+      "pattern": "^[a-z0-9-]+$"
     },
     "flow": {
       "type": "string",
       "description": "Flow identifier",
-      "pattern": "^[a-zA-Z0-9\\-]+$"
+      "pattern": "^[a-z0-9-]+$"
     },
     "flowVersion": {
       "type": "string",
@@ -35,7 +35,7 @@
     "domain": {
       "type": "string",
       "description": "Domain identifier",
-      "pattern": "^[a-zA-Z\\-]+$"
+      "pattern": "^[a-z0-9-]+$"
     },
     "version": {
       "type": "string",
@@ -88,12 +88,12 @@
                 "key": {
                   "type": "string",
                   "description": "Timeout key identifier",
-                  "pattern": "^[a-zA-Z0-9\\-]+$"
+                  "pattern": "^[a-z0-9-]+$"
                 },
                 "target": {
                   "type": "string",
                   "description": "Target state for timeout",
-                  "pattern": "^[a-zA-Z0-9\\-]+$"
+                  "pattern": "^[a-z0-9-]+$"
                 },
                 "versionStrategy": {
                   "$ref": "#/definitions/versionStrategy"
@@ -379,17 +379,17 @@
         "key": {
           "type": "string",
           "description": "Transition key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "target": {
           "type": "string",
           "description": "Target state key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "from": {
           "type": "string",
           "description": "Source state key (optional for shared transitions)",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "versionStrategy": {
           "$ref": "#/definitions/versionStrategy"
@@ -472,7 +472,7 @@
         "key": {
           "type": "string",
           "description": "State key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "stateType": {
           "$ref": "#/definitions/stateType"
