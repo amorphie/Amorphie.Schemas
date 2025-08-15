@@ -45,7 +45,7 @@ jobs:
           args: >
             -Dsonar.projectKey=burgan-tech_vnext-schema
             -Dsonar.organization=burgan-tech
-            -Dsonar.projectName="vNext Schema Definitions"
+            -Dsonar.projectName=vNext\ Schema\ Definitions
             -Dsonar.projectVersion=1.0.0
             -Dsonar.sources=index.js,schemas
             -Dsonar.tests=test
