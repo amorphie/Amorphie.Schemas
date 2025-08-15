@@ -42,3 +42,14 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=burgan-tech_vnext-schema
+            -Dsonar.organization=burgan-tech
+            -Dsonar.projectName="vNext Schema Definitions"
+            -Dsonar.projectVersion=1.0.0
+            -Dsonar.sources=index.js,schemas
+            -Dsonar.tests=test
+            -Dsonar.language=js
+            -Dsonar.exclusions=**/node_modules/**,**/coverage/**,**/dist/**,**/*.d.ts
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.sourceEncoding=UTF-8

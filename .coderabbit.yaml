@@ -17,12 +17,11 @@ reviews:
       - master
       - main
       - develop
-      - sonar
+      - "release-v*"
       - "release/*"
       - "feature/*"
       - "hotfix/*"
       - "bugfix/*"
-      - "schema/*"
   # Request changes threshold
   request_changes_workflow: false
 
