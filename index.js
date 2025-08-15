@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 // Load all schema files
 const schemas = {
   coreSchema: require('./schemas/core-schema.schema.json'),
