@@ -1,0 +1,19 @@
+{
+  "include": [
+    "index.js",
+    "test/**/*.js"
+  ],
+  "exclude": [
+    "node_modules/**",
+    "coverage/**",
+    "*.config.js"
+  ],
+  "reporter": [
+    "text",
+    "lcov",
+    "html"
+  ],
+  "check-coverage": false,
+  "all": true,
+  "cache": false
+}

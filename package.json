@@ -11,7 +11,11 @@
     "README.md"
   ],
   "scripts": {
-    "prepublishOnly": "echo 'Preparing for publish...'"
+    "test": "node test/validate-schemas.js",
+    "test:coverage": "nyc npm test",
+    "lint": "eslint . --fix",
+    "validate": "npm run test",
+    "prepublishOnly": "npm run validate && npm run lint"
   },
   "keywords": [
     "vnext",
@@ -36,6 +40,10 @@
     "node": ">=14.0.0"
   },
   "devDependencies": {
-    "ajv": "^8.17.1"
+    "ajv": "^8.17.1",
+    "eslint": "^8.57.0",
+    "@eslint/js": "^9.0.0",
+    "nyc": "^15.1.0",
+    "mocha": "^10.2.0"
   }
 }
