@@ -274,8 +274,7 @@
                     "properties": {
                         "ref": {
                             "type": "string",
-                            "description": "Reference to component file",
-                            "pattern": "^[A-Za-z]+/[a-z0-9-]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.json$"
+                            "description": "Reference to component file"
                         }
                     },
                     "additionalProperties": false

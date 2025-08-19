@@ -20,12 +20,12 @@
     "key": {
       "type": "string",
       "description": "Workflow key identifier",
-      "pattern": "^[a-zA-Z0-9\\-]+$"
+      "pattern": "^[a-z0-9-]+$"
     },
     "flow": {
       "type": "string",
       "description": "Flow identifier",
-      "pattern": "^[a-zA-Z0-9\\-]+$"
+      "pattern": "^[a-z0-9-]+$"
     },
     "flowVersion": {
       "type": "string",
@@ -35,7 +35,7 @@
     "domain": {
       "type": "string",
       "description": "Domain identifier",
-      "pattern": "^[a-zA-Z\\-]+$"
+      "pattern": "^[a-z0-9-]+$"
     },
     "version": {
       "type": "string",
@@ -88,12 +88,12 @@
                 "key": {
                   "type": "string",
                   "description": "Timeout key identifier",
-                  "pattern": "^[a-zA-Z0-9\\-]+$"
+                  "pattern": "^[a-z0-9-]+$"
                 },
                 "target": {
                   "type": "string",
                   "description": "Target state for timeout",
-                  "pattern": "^[a-zA-Z0-9\\-]+$"
+                  "pattern": "^[a-z0-9-]+$"
                 },
                 "versionStrategy": {
                   "$ref": "#/definitions/versionStrategy"
@@ -238,35 +238,64 @@
       }
     },
     "reference": {
-      "type": "object",
-      "required": [
-        "key",
-        "domain",
-        "flow",
-        "version"
-      ],
-      "properties": {
-        "key": {
-          "type": "string",
-          "description": "Reference key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+      "description": "Generic reference - can be either explicit reference or ref",
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Explicit reference",
+          "required": [
+            "key",
+            "domain",
+            "flow",
+            "version"
+          ],
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "domain": {
+              "type": "string"
+            },
+            "flow": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+$"
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "key"
+              ]
+            },
+            {
+              "required": [
+                "id"
+              ]
+            }
+          ]
         },
-        "domain": {
-          "type": "string",
-          "description": "Domain name",
-          "pattern": "^[a-zA-Z\\-]+$"
-        },
-        "flow": {
-          "type": "string",
-          "description": "Flow name",
-          "pattern": "^[a-z\\-]+$"
-        },
-        "version": {
-          "type": "string",
-          "description": "Version in Major.Minor.Patch format",
-          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        {
+          "type": "object",
+          "description": "Reference using ref",
+          "required": [
+            "ref"
+          ],
+          "properties": {
+            "ref": {
+              "type": "string",
+              "description": "Reference to component file"
+            }
+          },
+          "additionalProperties": false
         }
-      }
+      ]
     },
     "scriptCode": {
       "type": "object",
@@ -350,17 +379,17 @@
         "key": {
           "type": "string",
           "description": "Transition key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "target": {
           "type": "string",
           "description": "Target state key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "from": {
           "type": "string",
           "description": "Source state key (optional for shared transitions)",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "versionStrategy": {
           "$ref": "#/definitions/versionStrategy"
@@ -443,7 +472,7 @@
         "key": {
           "type": "string",
           "description": "State key",
-          "pattern": "^[a-zA-Z0-9\\-]+$"
+          "pattern": "^[a-z0-9-]+$"
         },
         "stateType": {
           "$ref": "#/definitions/stateType"
